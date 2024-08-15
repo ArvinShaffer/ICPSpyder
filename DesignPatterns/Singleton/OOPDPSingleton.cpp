@@ -1,6 +1,7 @@
 #include <QCoreApplication>
 #include <iostream>
 #include "Singleton.h"
+#include "Logger.h"
 
 int main(int argc, char *argv[])
 {
@@ -21,6 +22,12 @@ int main(int argc, char *argv[])
 
     SingletonH::GetInstance().Test();
     SingletonH::GetInstance().Test();
+
+    // Singleton Logger
+    Logger& logger = Logger::GetInstance();
+    logger.OpenLogFile("test.log");
+    logger.Log("Hello singleton test");
+    logger.Log("input error test", LogLevel::ERROR, __FILE__, __LINE__);
 
     return a.exec();
 }

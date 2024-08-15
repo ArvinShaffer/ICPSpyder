@@ -16,4 +16,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    Singleton.h
+    Singleton.h \
+    Logger.h
+
+DISTFILES += \
+    config.ini
