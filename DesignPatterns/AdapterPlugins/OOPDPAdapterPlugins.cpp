@@ -14,5 +14,7 @@ int main(int argc, char *argv[])
     pluginsManager.AddPlugin(ssP);
     pluginsManager.AddPlugin(sP);
 
+    pluginsManager.ExecutesAllPlugins();
+    pluginsManager.UnLoadPlugins();
     return a.exec();
 }
